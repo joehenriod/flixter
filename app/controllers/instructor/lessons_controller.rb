@@ -11,6 +11,9 @@ class Instructor::LessonsController < ApplicationController
 
   def create
     @section = Section.find(params[:section_id])
+      if @section.course.user != current_user
+      return render :text => 'Unauthorized', :status => :unauthorized
+      end
     @lesson = @section.lessons.create(lesson_params)
     redirect_to instructor_course_path(@section.course)
   end
