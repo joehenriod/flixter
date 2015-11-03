@@ -9,6 +9,9 @@ gem 'simple_form'
 #Store Amazon credentials securely
 gem "figaro"
 
+#Image Manipulation
+gem 'mini_magick', '~> 4.3.1'
+
 #communicate with S3
 gem "fog", "~> 1.3.1"
 
