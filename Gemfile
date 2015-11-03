@@ -9,6 +9,9 @@ gem 'simple_form'
 #Store Amazon credentials securely
 gem "figaro"
 
+#communicate with S3
+gem "fog", "~> 1.3.1"
+
 # Used upload photos and videos for lessons
 gem 'carrierwave'
 
