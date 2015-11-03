@@ -6,6 +6,9 @@ gem 'rails', '4.0.1'
 # Used to created to Courses, Lessons and Sections
 gem 'simple_form'
 
+#Store Amazon credentials securely
+gem "figaro"
+
 # Used upload photos and videos for lessons
 gem 'carrierwave'
 
