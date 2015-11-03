@@ -13,7 +13,7 @@ gem "figaro"
 gem 'mini_magick', '~> 4.3.1'
 
 #communicate with S3
-gem "fog", "~> 1.3.1"
+gem 'carrierwave-aws'
 
 # Used upload photos and videos for lessons
 gem 'carrierwave'
