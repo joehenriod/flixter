@@ -23,7 +23,9 @@
     <div class="col-xs-12">
     <% @course.sections.each do |section| %>
       <div class="section">
-        <%= section.title %>
+        <h3>
+          <%= section.title %>
+        </h3>
         <% section.lessons.each do |lesson| %>
           <div class="lesson">
             <%= link_to lesson_path(lesson) do %>
