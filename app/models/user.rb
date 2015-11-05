@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
 	    enrollments.each do |enrollment|
 	      enrolled_courses << enrollment.course
 	    end
+	    
+	    return enrolled_courses.include?(course)
+
 	end
-	
+
 end
