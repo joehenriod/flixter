@@ -7,9 +7,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
    def enrolled_in?(course)
-	   	enrolled_courses = enrollments.collect do |enrollment|
-        enrollment.course
-    end
+    enrolled_courses = enrollments.collect(&:course)
+    return enrolled_courses.include?(course)
+  end
 	    
 	    return enrolled_courses.include?(course)
 
