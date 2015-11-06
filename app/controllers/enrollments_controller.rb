@@ -3,13 +3,12 @@ class EnrollmentsController < ApplicationController
 
   def create
     current_user.enrollments.create(:course => current_course)
-    redirect_to course_path(current_course)
 
     # Amount in cents
     @amount = (current_course.cost * 100).to_i
 
     customer = Stripe::Customer.create(
-      :email => 'current_user.email',
+      :email => current_user.email,
       :card  => params[:stripeToken]
     )
 
@@ -19,7 +18,8 @@ class EnrollmentsController < ApplicationController
       :description => 'Flixter Premo Content',
       :currency    => 'usd'
     )
-		
+
+    redirect_to course_path(current_course)
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to root_path
