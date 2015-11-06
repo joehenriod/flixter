@@ -1,11 +1,11 @@
 class EnrollmentsController < ApplicationController
-	before_action :authenticate_user!
+  before_action :authenticate_user!
 
-	def create
-		current_user.enrollments.create(:course => current_course)
-		redirect_to course_path(current_course)
+  def create
+    current_user.enrollments.create(:course => current_course)
+    redirect_to course_path(current_course)
 
-		# Amount in cents
+    # Amount in cents
     @amount = 500
 
     customer = Stripe::Customer.create(
@@ -23,12 +23,11 @@ class EnrollmentsController < ApplicationController
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to charges_path
-	end
+  end
 
-	private
+  private
 
-  	def current_course
-    	@current_course ||= Course.find(params[:course_id])
-  	end
-
+  def current_course
+    @current_course ||= Course.find(params[:course_id])
+  end
 end
