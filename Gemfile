@@ -9,6 +9,9 @@ gem 'simple_form'
 #Store Amazon credentials securely
 gem "figaro"
 
+# Accept Payments
+gem 'stripe'
+
 #Image Manipulation
 gem 'mini_magick', '~> 4.3.1'
 
