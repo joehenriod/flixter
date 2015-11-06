@@ -16,13 +16,13 @@ class EnrollmentsController < ApplicationController
     charge = Stripe::Charge.create(
       :customer    => customer.id,
       :amount      => @amount,
-      :description => 'Rails Stripe customer',
+      :description => 'Flixter Premo Content',
       :currency    => 'usd'
     )
-
+		
   rescue Stripe::CardError => e
     flash[:error] = e.message
-    redirect_to charges_path
+    redirect_to root_path
   end
 
   private
