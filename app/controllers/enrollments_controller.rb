@@ -6,10 +6,10 @@ class EnrollmentsController < ApplicationController
     redirect_to course_path(current_course)
 
     # Amount in cents
-    @amount = 500
+    @amount = (current_course.cost * 100).to_i
 
     customer = Stripe::Customer.create(
-      :email => 'example@stripe.com',
+      :email => 'current_user.email',
       :card  => params[:stripeToken]
     )
 
