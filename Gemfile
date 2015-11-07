@@ -9,6 +9,9 @@ gem 'simple_form'
 #Store Amazon credentials securely
 gem "figaro"
 
+#Order Lessons in the Database
+gem 'ranked-model'
+
 # Accept Payments
 gem 'stripe'
 
