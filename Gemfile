@@ -15,6 +15,9 @@ gem 'ranked-model'
 # Accept Payments
 gem 'stripe'
 
+# JQuery for sortable lessons
+gem 'jquery-ui-rails'
+
 #Image Manipulation
 gem 'mini_magick', '~> 4.3.1'
 
