@@ -12,7 +12,7 @@ class Instructor::LessonsController < ApplicationController
   end
 
   def update
-    @current_lesson ||= Lesson.find(params[:id])
+    current_lesson.update_attributes(lesson_params)
   end
 
   private
