@@ -9,10 +9,15 @@ class Instructor::SectionsController < ApplicationController
       redirect_to instructor_course_path(current_course)
   end
 
+  def new
+    @section = Section.new
+  end
+
   def update
     current_section.update_attributes(section_params)
     render :text => 'updated!'
   end
+
 
 
   private
