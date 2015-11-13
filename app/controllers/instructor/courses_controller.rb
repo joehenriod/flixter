@@ -17,8 +17,8 @@ class Instructor::CoursesController < ApplicationController
   end
 
    def show
-    
-  end
+    @section = Section.new
+   end
 
   private
   
