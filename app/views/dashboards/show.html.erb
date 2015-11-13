@@ -8,7 +8,11 @@
     </h3>
 
     <%= image_tag course.image, :class => 'img-responsive' %>
-    <%= course.description %>
-    <%= link_to "More Info...", course_path(course), :class => 'btn btn-lg btn-primary' %>
+    <div class="col-xs-12 col-sm-8">
+      <%= course.description %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= link_to "More Info...", course_path(course), :class => 'btn btn-lg btn-primary' %>
+    </div>
   <% end %>
 </div>
