@@ -9,5 +9,6 @@
 
     <%= image_tag course.image, :class => 'img-responsive' %>
     <%= course.description %>
+    <%= link_to "More Info...", course_path(course), :class => 'btn btn-lg btn-primary' %>
   <% end %>
 </div>
