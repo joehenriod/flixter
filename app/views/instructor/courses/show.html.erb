@@ -16,7 +16,7 @@
 
     $('.new-lesson-button').click(function( event ) {
       var lessonUrl = $( event.target).data('lesson-url');
-      alert( lessonUrl );
+      $('#newLessonForm').attr('action', lessonUrl);
     });
 
     $('.lessons').sortable({
