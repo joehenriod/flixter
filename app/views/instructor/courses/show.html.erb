@@ -14,8 +14,8 @@
 
   $(function() {
 
-    $('.new-lesson-button').click(function() {
-      alert(event.target);
+    $('.new-lesson-button').click(function( event ) {
+      alert( $( event.target).data('lesson-url')  );
     });
 
     $('.lessons').sortable({
