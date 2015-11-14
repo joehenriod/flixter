@@ -15,9 +15,9 @@
   $(function() {
 
     $('.new-lesson-button').click(function() {
-      alert('hello!');
+      alert(event.target);
     });
-    
+
     $('.lessons').sortable({
       update: function( event, ui ) {
         $.ajax({
